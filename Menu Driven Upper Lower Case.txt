@@ -1,0 +1,57 @@
+// Convert a string into lower or upper case by using menu driven program
+
+#include<stdio.h>
+#include<string.h>
+char* Mystrlwr(char*);
+char* Mystrupr(char*);
+void main()
+{
+	int ch;
+	char arr[50];
+	
+	printf("Plese cofirm which operation you have to perfrom\n\n1.Upper To Lower Case\n2.Lower to Upper case\n");
+	printf("Press 1 or 2 : ");
+	scanf("%d",&ch);
+	if(ch==1)
+	{
+		printf("Enter String :");
+		scanf("%s",&arr);	
+		
+		Mystrlwr(arr);
+		printf("\nstring in lower case : %s",Mystrlwr(arr));
+	}
+	else 
+	if(ch==2)
+	{
+	printf("Enter String :");
+	scanf("%s",&arr);
+	
+	Mystrupr(arr);
+	printf("\nstring in upper case : %s",Mystrupr(arr));
+	}
+	else
+	printf("\nInvalid Choice");
+}
+char* Mystrlwr(char* arr)
+{
+	int i;
+	for(i=0;arr[i]!='\0';i++)
+	{
+		if(arr[i]>='A'&&arr[i]<='Z')
+		{
+			arr[i]=arr[i]+32;
+		}
+	}
+	return arr;
+}
+char* Mystrupr(char* arr){
+	int  j;
+	for (j=0;arr[j]!='\0';j++)
+	{
+		if(arr[j]>='a'&&arr[j]<='z')
+		{
+			arr[j]=arr[j]-32;
+		}
+	}
+	return arr;
+}
